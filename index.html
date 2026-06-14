@@ -1,42 +1,165 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#071827" />
-
-    <title>CounselPage — Professional Websites for Lawyers, Chambers &amp; the Bar</title>
-    <meta
-      name="description"
-      content="CounselPage builds dignified, ethics-conscious websites and shareable profile pages for Nigerian lawyers, chambers and NBA branches. By MatterHouse Studio."
-    />
-    <link rel="canonical" href="https://counselpage.vercel.app/" />
-
-    <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="CounselPage" />
-    <meta property="og:title" content="CounselPage — Professional Websites for Lawyers &amp; Chambers" />
-    <meta
-      property="og:description"
-      content="Dignified, ethics-conscious websites and shareable profile pages for Nigerian lawyers, chambers and NBA branches."
-    />
-    <meta property="og:url" content="https://counselpage.vercel.app/" />
-    <meta property="og:image" content="https://counselpage.vercel.app/og.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CounselPage — Professional Websites for Lawyers &amp; Chambers" />
-    <meta
-      name="twitter:description"
-      content="Dignified, ethics-conscious websites and shareable profile pages for Nigerian lawyers, chambers and NBA branches."
-    />
-    <meta name="twitter:image" content="https://counselpage.vercel.app/og.png" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071827">
+<title>CounselPage — Professional Websites for Lawyers, Chambers &amp; the Bar</title>
+<meta name="description" content="CounselPage builds dignified, ethics-conscious websites and shareable profile pages for Nigerian lawyers, chambers and NBA branches. By MatterHouse Studio.">
+<link rel="canonical" href="https://counselpage.vercel.app/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CounselPage — Professional Websites for Lawyers &amp; Chambers">
+<meta property="og:description" content="Dignified, ethics-conscious websites and shareable profile pages for Nigerian lawyers, chambers and NBA branches.">
+<meta property="og:url" content="https://counselpage.vercel.app/">
+<meta property="og:image" content="https://counselpage.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://counselpage.vercel.app/og.png">
+<style>
+:root{--navy:#071827;--cream:#f4efe6;--paper:#fffdf8;--text:#111d2b;--muted:#6d7784;--gold:#b9934b;--line:#e6ddd0;font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper)}a{text-decoration:none;color:inherit}
+.header{position:sticky;top:0;z-index:10;background:rgba(244,239,230,.96);border-bottom:1px solid var(--line);padding:18px clamp(24px,6vw,80px);display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;gap:14px;align-items:center}.logo{width:52px;height:52px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif}
+.brand strong{display:block;font-family:Georgia,serif;font-size:1.7rem}.brand small{display:block;text-transform:uppercase;letter-spacing:.22em;color:var(--muted);font-size:.65rem}
+nav{display:flex;gap:24px;color:var(--muted);font-size:.9rem}
+.hero,.section{padding:clamp(70px,10vw,120px) clamp(28px,6vw,92px)}.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center}
+.cream{background:var(--cream)}.navy{background:var(--navy);color:white}
+.eyebrow,.label,.card span{text-transform:uppercase;letter-spacing:.25em;color:var(--gold);font-size:.78rem;font-weight:700}.label{color:var(--muted)}.gold{color:var(--gold)}
+h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1;letter-spacing:-.05em;margin:0}
+h1{font-size:clamp(3.4rem,9vw,7.5rem);max-width:950px}h2{font-size:clamp(2.6rem,6vw,5.5rem);max-width:900px;margin-bottom:28px}h3{font-size:clamp(1.5rem,3vw,2.2rem)}
+p,li{color:var(--muted);line-height:1.75;font-size:1.1rem}.navy p,.navy li,.navy .lead{color:rgba(255,255,255,.72)}
+.lead{max-width:850px;font-size:clamp(1.25rem,2.5vw,1.8rem)}.actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;justify-content:center;align-items:center;min-height:58px;padding:0 28px;border:1px solid var(--line);background:white;font-weight:700;cursor:pointer;font-size:1rem;font-family:inherit}
+.primary{background:var(--navy);color:white;border-color:var(--navy)}.whatsapp{background:#1f8a4c;border-color:#1f8a4c;color:#fff}.goldbtn{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.trust{border-top:1px solid var(--line);margin-top:44px;padding-top:24px;font-style:italic}
+.grid,.pricing{display:grid;gap:28px;margin-top:42px}.grid{grid-template-columns:repeat(2,1fr)}.grid.three,.pricing{grid-template-columns:repeat(3,1fr)}
+.card,.price,.disclaimer{background:var(--paper);border:1px solid var(--line);padding:clamp(28px,4vw,52px);box-shadow:0 24px 60px rgba(7,24,39,.07)}
+.price.featured{background:var(--navy);color:white;transform:translateY(-16px)}.price.featured p,.price.featured li{color:rgba(255,255,255,.72)}
+.popular{display:inline-block;color:var(--gold);text-transform:uppercase;letter-spacing:.18em;margin-bottom:18px}
+.amount{display:block;font-family:Georgia,serif;font-size:clamp(2.5rem,5vw,4.5rem);margin:18px 0}
+ul{list-style:none;padding:0;display:grid;gap:12px;margin:28px 0}.note{text-align:center;font-style:italic;margin-top:32px}
+.list{display:grid;gap:14px;margin-top:36px;max-width:850px}.list span{border:1px solid rgba(255,255,255,.14);padding:20px;color:rgba(255,255,255,.82)}
+.disclaimer{max-width:900px;font-family:Georgia,serif;font-style:italic;font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.55;color:var(--text)}
+.steps{max-width:850px;display:grid;gap:20px}.steps p{border-left:2px solid var(--gold);padding-left:22px}
+.form{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;background:var(--paper);padding:clamp(28px,5vw,56px);margin-top:40px}
+.field{display:grid;gap:8px}.field.full{grid-column:1/-1}.field>span{font-size:.82rem;font-weight:700;letter-spacing:.04em;color:var(--text)}.navy .field>span{color:rgba(255,255,255,.82)}
+input,select,textarea{width:100%;border:1px solid var(--line);background:var(--cream);padding:18px;font:inherit;color:var(--text)}
+.sent{background:var(--paper);border:1px solid var(--gold);padding:clamp(28px,5vw,56px);margin-top:40px;max-width:760px}.sent h3{margin-bottom:14px}.sent p{color:var(--muted);margin-bottom:26px}.sent a{color:var(--gold);text-decoration:underline}
+footer{background:#040d18;color:white;padding:44px clamp(28px,6vw,92px)}
+.footer-grid{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start}
+.footer-grid strong{font-family:Georgia,serif;font-size:1.5rem;display:block;margin-bottom:8px}footer p{color:rgba(255,255,255,.65)}
+.footer-contact{display:grid;gap:10px;text-align:right}.footer-contact a{color:rgba(255,255,255,.82);border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:3px}
+@media(max-width:850px){nav{display:none}.grid,.grid.three,.pricing,.form{grid-template-columns:1fr}.price.featured{transform:none}.btn{width:100%}h1{font-size:3.3rem}.footer-contact{text-align:left}}
+</style>
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="#top"><span class="logo">CP</span><span><strong>CounselPage</strong><small>By MatterHouse Studio</small></span></a>
+  <nav><a href="#work">Work</a><a href="#packages">Packages</a><a href="#samples">Samples</a><a href="#request">Request</a></nav>
+</header>
+<section id="top" class="hero">
+  <p class="eyebrow">Professional digital presence, for the Bar</p>
+  <h1>The digital business card for the modern lawyer</h1>
+  <p class="lead">CounselPage helps lawyers, chambers and legal institutions create dignified professional websites, shareable profile pages and ethics-conscious digital presence systems.</p>
+  <div class="actions">
+    <a class="btn primary" href="#request">Start your CounselPage</a>
+    <a class="btn whatsapp" href="https://wa.me/2347030673410?text=Hello%20CounselPage" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+    <a class="btn" href="#packages">View packages</a>
+  </div>
+  <p class="trust">Built for credibility. Designed for dignity. Structured for referral confidence.</p>
+</section>
+<section class="section cream">
+  <p class="label">&sect; 01 The case for presence</p>
+  <h2>Your reputation deserves more than a phone number</h2>
+  <p class="lead">Many lawyers are still introduced only through a WhatsApp contact, a paper card or word of mouth. Yet clients, institutions and colleagues now search, verify and compare professionals online before they make contact.</p>
+  <div class="grid">
+    <article class="card"><h3>No searchable professional profile</h3><p>Many lawyers are well known offline yet almost invisible online.</p></article>
+    <article class="card"><h3>A weak first impression</h3><p>A poor or absent digital presence can quietly reduce confidence.</p></article>
+    <article class="card"><h3>Scattered contact details</h3><p>Phone, email, address and practice areas need one settled place.</p></article>
+    <article class="card"><h3>Unclear positioning</h3><p>Your public profile should explain what you do and whom you serve.</p></article>
+  </div>
+</section>
+<section id="work" class="section">
+  <p class="label">&sect; 02 The work</p><h2>What we build</h2>
+  <div class="grid three">
+    <article class="card"><span>One page</span><h3>Digital Business Card</h3><p>A clean professional profile with a single link for WhatsApp, email signatures and printed cards.</p></article>
+    <article class="card"><span>Personal site</span><h3>Lawyer Profile Website</h3><p>A fuller personal website with biography, practice focus, articles and consultation request form.</p></article>
+    <article class="card"><span>Firm</span><h3>Chambers Website</h3><p>A complete firm presence with lawyers, practice areas, contact forms and institutional copy.</p></article>
+  </div>
+</section>
+<section id="packages" class="section cream">
+  <p class="label">&sect; 03 Engagement</p><h2>Simple packages for different professional needs</h2>
+  <div class="pricing">
+    <article class="price"><h3>Starter CounselPage</h3><strong class="amount">&#8358;75,000</strong><p>For young lawyers and professionals who need a clean, dignified digital card.</p><ul><li>&#10003; One-page professional profile</li><li>&#10003; Photo and biography</li><li>&#10003; Practice areas</li><li>&#10003; WhatsApp, phone and email buttons</li><li>&#10003; Office / location section</li><li>&#10003; Mobile-first design</li></ul><a class="btn primary" href="#request">Choose package</a></article>
+    <article class="price featured"><b class="popular">Most popular</b><h3>Professional CounselPage</h3><strong class="amount">&#8358;150,000</strong><p>For lawyers who want stronger authority, deeper client confidence and a fuller professional profile.</p><ul><li>&#10003; Professional homepage / profile</li><li>&#10003; Detailed biography</li><li>&#10003; Practice focus section</li><li>&#10003; Consultation request form</li><li>&#10003; Article / update section</li><li>&#10003; Ethics-conscious disclaimer</li></ul><a class="btn primary" href="#request">Choose package</a></article>
+    <article class="price"><h3>Chambers Presence</h3><strong class="amount">From &#8358;300,000</strong><p>For law firms, chambers, NBA branches, legal associations and legal institutions.</p><ul><li>&#10003; Full chambers website</li><li>&#10003; Team / lawyer profiles</li><li>&#10003; Practice area pages</li><li>&#10003; Contact and intake forms</li><li>&#10003; Office location</li><li>&#10003; Institutional copywriting</li></ul><a class="btn primary" href="#request">Choose package</a></article>
+  </div>
+  <p class="note">Custom pricing is available for NBA branches, conferences, committees and institutional pages.</p>
+</section>
+<section class="section navy">
+  <p class="label gold">&sect; 04 For the profession</p><h2>For NBA branches and legal associations</h2>
+  <p class="lead">CounselPage can help NBA branches and legal associations present executives, events, notices, committees, programmes and contact channels in a more organised digital format.</p>
+  <div class="list"><span>Branch executive profiles</span><span>Event announcement pages</span><span>Conference pages</span><span>Membership information</span><span>Committee pages</span><span>Notices and updates</span></div>
+</section>
+<section class="section">
+  <p class="label">&sect; 05 Standards</p><h2>Designed with professional dignity in mind</h2>
+  <p class="lead">CounselPage does not build loud, misleading or improper promotional pages. The service attends to professional presentation, contact clarity, institutional credibility and dignified visibility.</p>
+  <div class="disclaimer">Information displayed on a CounselPage website is for professional identification and general information only. It is not legal advice and does not create a lawyer-client relationship unless formal engagement is completed.</div>
+</section>
+<section id="samples" class="section cream">
+  <p class="label">&sect; 06 Illustrations</p><h2>Sample page styles</h2>
+  <div class="grid three">
+    <article class="card"><h3>Individual Lawyer Page</h3><p>For personal professional identity.</p></article>
+    <article class="card"><h3>Chambers Website</h3><p>For law firms and chambers.</p></article>
+    <article class="card"><h3>NBA Branch Event Page</h3><p>For branches, committees and conferences.</p></article>
+  </div>
+</section>
+<section class="section">
+  <p class="label">&sect; 07 The method</p><h2>How it works</h2>
+  <div class="steps">
+    <p><b>01 Submit your details</b><br>Name, photo, biography, contact details and practice areas.</p>
+    <p><b>02 We structure your profile</b><br>We organise your information into a clear professional presentation.</p>
+    <p><b>03 We design your page</b><br>Your CounselPage is designed with dignity and mobile-first responsiveness.</p>
+    <p><b>04 You review and approve</b><br>You check details and contact links before publication.</p>
+    <p><b>05 Your page goes live</b><br>You receive a shareable link for WhatsApp, email and printed cards.</p>
+  </div>
+</section>
+<section id="request" class="section navy">
+  <p class="label gold">&sect; 08 Begin</p><h2>Request your CounselPage</h2>
+  <p class="lead">Tell us who you are and what you practise. Sending opens WhatsApp with your details ready &mdash; just press send and we will reply.</p>
+  <div id="form-area">
+    <div class="form">
+      <label class="field"><span>Full name</span><input id="f-name" placeholder="e.g. Amina Yusuf"></label>
+      <label class="field"><span>Professional title</span><input id="f-title" placeholder="e.g. Legal Practitioner"></label>
+      <label class="field full"><span>Type of page</span><select id="f-type"><option>Digital Business Card</option><option>Professional CounselPage</option><option>Chambers Website</option><option>NBA Branch / Institution Page</option></select></label>
+      <label class="field"><span>Phone number</span><input id="f-phone" placeholder="080..."></label>
+      <label class="field"><span>Email address</span><input id="f-email" type="email" placeholder="name@email.com"></label>
+      <label class="field full"><span>City / State</span><input id="f-city" placeholder="e.g. Lafia, Nasarawa"></label>
+      <label class="field full"><span>Brief description</span><textarea id="f-desc" rows="5" placeholder="Tell us a little about your practice and what you need."></textarea></label>
+      <button class="btn goldbtn" onclick="submitForm()" style="grid-column:1/-1">Send via WhatsApp</button>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div><strong>CounselPage</strong><p>By MatterHouse Studio &mdash; professional digital presence for lawyers, chambers and the Bar.</p></div>
+    <div class="footer-contact">
+      <a href="https://wa.me/2347030673410" target="_blank" rel="noopener noreferrer">WhatsApp &middot; 0703 067 3410</a>
+      <a href="tel:+2347030673410">Call &middot; 0703 067 3410</a>
+      <a href="mailto:info@matterhousestudio.com">info@matterhousestudio.com</a>
+    </div>
+  </div>
+</footer>
+<script>
+function submitForm(){
+  var n=document.getElementById('f-name').value.trim(),p=document.getElementById('f-phone').value.trim();
+  if(!n||!p){alert('Please enter your name and phone number.');return;}
+  var msg=['New CounselPage request','','Name: '+n,'Title: '+document.getElementById('f-title').value,'Page: '+document.getElementById('f-type').value,'Phone: '+p,'Email: '+document.getElementById('f-email').value,'City: '+document.getElementById('f-city').value,'','Details: '+document.getElementById('f-desc').value].join('\n');
+  window.open('https://wa.me/2347030673410?text='+encodeURIComponent(msg),'_blank');
+  document.getElementById('form-area').innerHTML='<div class="sent"><h3>WhatsApp is opening…<\/h3><p>Press send in WhatsApp to reach us. If it did not open, message <a href="https:\/\/wa.me\/2347030673410">0703 067 3410<\/a> or email <a href="mailto:info@matterhousestudio.com">info@matterhousestudio.com<\/a>.<\/p><button class="btn" onclick="location.reload()">Make another request<\/button><\/div>';
+}
+</script>
+</body>
 </html>
